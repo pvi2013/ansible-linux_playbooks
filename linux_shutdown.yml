@@ -1,5 +1,5 @@
 ---
-- hosts: shutdown
+- hosts: prlab
   tasks:
      - name: shutdown
        command: /sbin/shutdown -h now
