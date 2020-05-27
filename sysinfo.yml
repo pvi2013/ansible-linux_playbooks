@@ -1,0 +1,8 @@
+---
+- hosts: all
+  tasks:
+    - name: processor_graphics
+      shell: lscpu | grep 'Model name'; lscpu | grep -i socket; free -m -h | grep -i mem | cut -c1-20; lspci | grep -i vga
+      register: processor_graphics
+
+    - debug: var=processor_graphics.stdout_lines
